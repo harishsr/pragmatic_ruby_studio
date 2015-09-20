@@ -1,7 +1,13 @@
-name1 = "larry"
-name2 = "curly"
-name3 = "moe"
-health1 = 60
-puts "#{name1}'s health is #{health1 / 9.0}"
+def time
+  current_time = Time.new
+  current_time.strftime("%I:%M:%S")
+end
 
-puts "Players: \n\t#{name1}\n\t#{name2}\n\t#{name3}"
+def say_hello(name, health = 100)
+  "I'm #{name.capitalize} with a health of #{health} as of #{time}."
+end
+
+puts say_hello("larry", 60)
+puts say_hello("curly", 125)
+puts say_hello("moe")
+puts say_hello("shemp", 90)
