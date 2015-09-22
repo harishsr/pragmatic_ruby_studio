@@ -22,7 +22,6 @@ end
 
 player1 = Player.new("moe")
 puts player1
-puts player1.inspect
 
 player2 = Player.new("larry", 60)
 puts player2
