@@ -43,6 +43,12 @@ class Game
     @players.each do |player|
       puts player
     end
+    @players.each do |player|
+      player.blam
+      player.w00t
+      player.w00t
+      puts player
+    end
   end
 end
 
