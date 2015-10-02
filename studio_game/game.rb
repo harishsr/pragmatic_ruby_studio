@@ -27,4 +27,26 @@ class Game
       end
     end
   end
+
+  def print_stats
+    strong, wimpy = @players.partition { |player| player.strong? }
+    
+    puts "\n#{title} Statistics:"
+    puts "\n#{strong.count} strong players:"
+    strong.each do |strong_player|
+      puts "#{strong_player.name} (#{strong_player.score})"
+    end
+
+    puts "\n#{wimpy.count} wimpy players:"
+    wimpy.each do |wimpy_player| 
+      puts "#{wimpy_player.name} (#{wimpy_player.score})"
+    end
+  end
+
+  def high_scores
+    puts "\n#{@title} High Scores:"
+    @players.sort.each do |player|
+      puts "#{player.name.ljust(30, ".")} #{player.score}"
+    end
+  end
 end
