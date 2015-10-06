@@ -49,9 +49,12 @@ class Game
       puts "#{wimpy_player.name} (#{wimpy_player.score})"
     end
 
-    @players.each do |player|
-      puts "\n#{player.name}'s total points:"
-      puts "#{player.points} total points"
+    @players.sort.each do |player|
+      puts "\n#{player.name}'s point totals:"
+      player.each_found_treasure do |treasure|
+        puts "#{treasure.points} total #{treasure.name} points"
+      end
+      puts "#{player.points} grand total points"
     end
   end
 
